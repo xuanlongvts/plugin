@@ -17,3 +17,22 @@
 .nav-list li a:hover{
 	color: #000;
 }
+
+.eachBox{
+	margin-right: 10px;
+	display: inline-block;
+	width: 620px
+}
+
+.eachBox textarea{
+	width: 600px;
+    padding: 4px 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    margin-bottom: 7px;
+    height: 500px;
+    resize: none;
+}
+
