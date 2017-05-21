@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 const home = () => (
 	<div>
-		Welcome to normalizr
+		<h2>Welcome to normalizr</h2>
 	</div>
 );
 
