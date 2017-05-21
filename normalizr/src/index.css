@@ -14,6 +14,7 @@
 	text-decoration: none;
 }
 
+.nav-list li a.active,
 .nav-list li a:hover{
 	color: #000;
 }
@@ -36,3 +37,27 @@
     resize: none;
 }
 
+.list-sublink{
+	overflow: hidden;
+}
+
+.list-sublink li{
+	list-style: none;
+	float: left;
+	margin: 0 10px;
+}
+
+.list-sublink a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #111;
+}
+
+.list-sublink a.active,
+.list-sublink a:hover{
+	color: #023093;
+}
+
+.lblChooseTopic{
+	margin-left: 50px;
+}

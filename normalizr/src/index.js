@@ -6,16 +6,16 @@ import Denormalize from './components/denormalize';
 import Schema from './components/schema';
 import Quickstart from './components/quickstart';
 import "./index.css";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 ReactDOM.render(
 	<Router>
 		<div>
 			<ul className="nav-list">
-				<li><Link to="/quickstart">Quickstart</Link></li>
-				<li><Link to="/normalize">Normalize</Link></li>
-				<li><Link to="/denormalize">Denormalize</Link></li>
-				<li><Link to="/schema">Schema</Link></li>
+				<li><NavLink to="/quickstart" activeClassName="active">Quickstart</NavLink></li>
+				<li><NavLink to="/normalize" activeClassName="active">Normalize</NavLink></li>
+				<li><NavLink to="/denormalize" activeClassName="active">Denormalize</NavLink></li>
+				<li><NavLink to="/schema" activeClassName="active">Schema</NavLink></li>
 			</ul>
 
 			<hr/>

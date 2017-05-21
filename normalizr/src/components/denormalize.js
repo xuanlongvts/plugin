@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
 import {denormalize, schema} from 'normalizr';
-import {renderCommon} from '../common/renderCommon';
+import {renderCommon, AreaBox} from '../common/renderCommon';
 
-const user = new schema.Entity('nongNo');
+const user = new schema.Entity('users');
 const mySchema = {users: [user]};
 const entities = {
 	users: {		
-		'1': {
+		'5a': {
 			id: 1
 		},
-		'2': {
+		'7b': {
 			id: 2
 		}		
 	}
 }
 const denormalizedData = denormalize(
 	{
-		users: [1, 2]
+		users: ['5a', '7b']
 	},
 	mySchema,
 	entities
@@ -25,21 +25,13 @@ const denormalizedData = denormalize(
 class denormalizeClass extends Component{
 
 	render(){
-		//console.log('denormalizedData: ', denormalizedData);
+		{renderCommon('rawJon', entities)}
+		{renderCommon('editJson', denormalizedData)}
 		return(
 			<div>
-				<h2>Normalize</h2>
+				<h2>Denormalize</h2>
 
-				<div className="eachBox">
-					<h4>Raw data: </h4>
-					<textarea id="rawJon" disabled>
-					</textarea>
-				</div>
-				<div className="eachBox">
-					<h4>Update data: </h4>
-					<textarea id="editJson" disabled>
-					</textarea>
-				</div>
+				<AreaBox />
 			</div>
 		)
 	}

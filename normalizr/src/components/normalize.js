@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {normalize, schema} from 'normalizr';
-import {renderCommon} from '../common/renderCommon';
+import {renderCommon, AreaBox} from '../common/renderCommon';
 
 const myData = {
 	users: [
@@ -19,22 +19,14 @@ const normalizedData = normalize(myData, mySchema);
 class normalizeClass extends Component{
 
 	render(){
+
 		{renderCommon('rawJon', myData)}
 		{renderCommon('editJson', normalizedData)}
 		return(
 			<div>
 				<h2>Normalize</h2>
 
-				<div className="eachBox">
-					<h4>Raw data: </h4>
-					<textarea id="rawJon" disabled>
-					</textarea>
-				</div>
-				<div className="eachBox">
-					<h4>Update data: </h4>
-					<textarea id="editJson" disabled>
-					</textarea>
-				</div>
+				<AreaBox />
 			</div>
 		)
 	}
