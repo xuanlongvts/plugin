@@ -1,0 +1,21 @@
+{
+  "name": "js_normalizr",
+  "version": "1.0.0",
+  "description": "js plugin normalizr",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "author": "xuanlongvts@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "normalizr": "^3.2.3",
+    "react-scripts": "^1.0.1"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
+  }
+}
