@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {normalize, schema} from 'normalizr';
-import renderCommon from '../common/renderCommon';
+import {renderCommon} from '../common/renderCommon';
 import raw_data from '../api/json_raw';
 
 class quickstart extends Component {
