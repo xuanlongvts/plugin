@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {renderCommon, AreaBox} from '../../common/renderCommon';
 
-const schemaEntity = () => (
-	<div>Entity</div>
-);
+class schemaEntity extends Component{
+	
+	render(){
+		return(
+			<div className="schema-array">
+
+				<AreaBox />
+			</div>
+		)
+	}
+};
 
 export default schemaEntity;

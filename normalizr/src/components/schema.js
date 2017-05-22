@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import {normalize, schema} from 'normalizr';
-import schemaIndex from './schema/index';
 import { Route, NavLink } from 'react-router-dom';
+import schemaArray from './schema/schemaArray';
+import schemaEntity from './schema/schemaEntity';
+import schemaObject from './schema/schemaObject';
+import schemaUnion from './schema/schemaUnion';
+import schemaValues from './schema/schemaValues';
 
 class schemaClass extends Component{
 
@@ -29,7 +33,11 @@ class schemaClass extends Component{
 					</li>
 				</ul>
 				
-				<Route path={`${urlSub}/:topicId`} component={schemaIndex} />
+				<Route path={`${urlSub}/array`} component={schemaArray} />
+				<Route path={`${urlSub}/entity`} component={schemaEntity} />
+				<Route path={`${urlSub}/object`} component={schemaObject} />
+				<Route path={`${urlSub}/union`} component={schemaUnion} />
+				<Route path={`${urlSub}/values`} component={schemaValues} />
 				<Route exact path={urlSub} render={() => (
 					<h4 className="lblChooseTopic">Please select a topic.</h4>
 				)} />
