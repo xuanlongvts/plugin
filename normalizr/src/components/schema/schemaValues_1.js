@@ -3,22 +3,19 @@ import {normalize, schema} from 'normalizr';
 import {renderCommon, AreaBox} from '../../common/renderCommon';
 
 const data = {
-	owner: {
-		id: 1,
-		type: 'user',
-		name: 'Anne'
+	firstThing: {
+		id: 1
+	},
+	secondThing: {
+		id: 2
 	}
 };
-const user = new schema.Entity('users');
-const group = new schema.Entity('groups');
-const unionSchema = new schema.Union({
-	user: user,
-	group: group
-}, 'type');
+const item = new schema.Entity('items');
+const valuesSchema = new schema.Values(item);
 
-const normalizeData = normalize(data, {owner: unionSchema});
+const normalizeData = normalize(data, valuesSchema);
 
-class schemaUnion extends Component{
+class schemaValues_1 extends Component{
 	
 	render(){
 		{renderCommon('rawJon', data)}
@@ -32,4 +29,4 @@ class schemaUnion extends Component{
 	}
 };
 
-export default schemaUnion;
+export default schemaValues_1;
