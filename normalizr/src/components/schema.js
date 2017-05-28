@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {normalize, schema} from 'normalizr';
 import { Route, NavLink } from 'react-router-dom';
 import schemaArray from './schema/schemaArray';
 import schemaEntity from './schema/schemaEntity';
