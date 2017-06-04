@@ -1,0 +1,24 @@
+{
+  "name": "todo-mvc",
+  "version": "1.0.0",
+  "description": "Todos MVC ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "react-scripts start"
+  },
+  "author": "xuanlongvts@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "react-scripts": "^1.0.7"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.6",
+    "todomvc-app-css": "^2.1.0"
+  }
+}
