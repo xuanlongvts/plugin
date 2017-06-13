@@ -1,0 +1,19 @@
+{
+  "name": "react-infinite-scroller-plugin",
+  "version": "1.0.0",
+  "description": "scroll page loading",
+  "main": "index.js",
+  "scripts": {
+    "dev": "react-scripts start"
+  },
+  "author": "xuanlongvts@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "prop-types": "^15.5.10",
+    "qwest": "^4.4.6",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-infinite-scroller": "^1.0.12",
+    "react-scripts": "^1.0.7"
+  }
+}
