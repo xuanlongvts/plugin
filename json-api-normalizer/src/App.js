@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import Root from './components/root';
+import store from './store/index';
+
+import './App.css';
 
 class App extends Component{
 
     render() {
         return (
-            <div>AAAA</div>
+            <Provider store={store}>
+                <Root />
+            </Provider>
         )
     }
 }
