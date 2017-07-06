@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import build from 'redux-object';
 import { test } from '../actions/index';
 import Question from './Question';
+import DevTools from './DevTools/index';
 
 const Content = ({ dispatch, loading = false, questions }) => {
     
@@ -15,24 +16,25 @@ const Content = ({ dispatch, loading = false, questions }) => {
         q => <Question key={q.id} question={q} />
     )
 
-    console.log('loading: ', loading);
-
     let loadingTag = '';
     if (loading) {
-        loadingTag = <button className="button"><span className="text">Fetch Data from API</span> <span className="loader"></span></button>
+        loadingTag = <button className="button">
+            <span className="text">Fetch Data from API</span>
+            <span className="loader"></span>
+        </button>
     }
     else {
-        loadingTag = <button className="button"
-                onClick={() => fetchData()}
-            >
+        loadingTag = <button className="button" onClick={() => fetchData()}>
                 <span className="text">Fetch Data from API</span>
-            </button>
+        </button>
     }
 
     return (
         <div>
             {loadingTag}
             {qWidgets}
+            
+            <DevTools />
         </div>
     )
 }
