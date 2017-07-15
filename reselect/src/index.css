@@ -9,15 +9,28 @@ body {
   margin: 0 auto;
 }
 
+.app h4{
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
 .list-group{
   list-style: none;
   padding: 0;
 }
 
-.list-group li{
+.list-items-selected{
+  list-style: disc;
+  padding: 0;
+}
+
+.list-group li,
+.list-items-selected li{
   margin-bottom: 7px;
 }
 
-.list-group li span{
+.list-group li span,
+.list-items-selected li{
   text-transform: capitalize;
 }

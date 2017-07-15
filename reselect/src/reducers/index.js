@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import posts from './posts';
+import selectedPostIds from './selected_posts';
 
 const rootReducer = combineReducers({
-    posts
+    posts,
+    selectedPostIds
 });
 
 export default rootReducer;
