@@ -1,0 +1,12 @@
+node_modules
+dist
+endpoint/static
+*.log
+.*
+!.gitignore
+!.npmignore
+!.babelrc
+!.travis.yml
+!.eslintrc
+!.eslintignore
+!.editorconfig
