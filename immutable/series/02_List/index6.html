@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>a JavaScript iterator</h1>
+    <h4>
+        To create an Immutable List of values that are passed in as a list of function arguments, use List.of().
+    </h4>
+    <div id="list"></div>
+    <div id="list.value"></div>
+    <script language="javascript">
+        // New List from existing JavaScript iterator (Array.map example)
+        const arrAdd = ['Ha Noi', 'Ho Chi Minh'];
+        const addList = Immutable.List(
+            arrAdd.map(item => `We love: <b> ${item}</b>`)
+        );
+        document.getElementById('list').innerHTML = addList;
+    </script>
+</body>
+</html>

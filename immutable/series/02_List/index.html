@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>List()</h1>
+    <div id="list"></div>
+    <div id="list.of"></div>
+    <script language="javascript">
+        const list = Immutable.List(); // su dung khi du lieu khong lap lai
+        const listOf = Immutable.List.of(); // su dung khi du lieu lap lai
+
+        document.getElementById('list').innerHTML = list;
+        document.getElementById('list.of').innerHTML = listOf;
+        console.log(list);
+        console.log(listOf);
+    </script>
+</body>
+</html>

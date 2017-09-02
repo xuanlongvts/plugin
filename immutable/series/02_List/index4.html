@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>a JavaScript Object</h1>
+    <div id="list"></div>
+    <div id="list.value"></div>
+    <script language="javascript">
+        const arrAddress = {
+            name: 'Long',
+            addr: 'Viet Nam'
+        }
+        const addList = Immutable.List.of(arrAddress);
+
+        document.getElementById('list').innerHTML = addList;
+        console.log('addList: ', addList);
+    </script>
+</body>
+</html>

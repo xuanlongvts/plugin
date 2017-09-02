@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>a JavaScript Array</h1>
+    <div id="list"></div>
+    <script language="javascript">
+        const arrPlace = ['Ha Noi', 'Ho Chi Minh'];
+        const list = Immutable.List(arrPlace);
+
+        document.getElementById('list').innerHTML = list;
+        console.log(list);
+    </script>
+</body>
+</html>
