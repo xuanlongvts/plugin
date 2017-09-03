@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>mergeWith()</h1>
+    
+    <div id="list"></div>
+    <div id="list1"></div>
+    <script language="javascript">
+        const oldArr = Immutable.List(['1', '2', '3', '4']);
+        const newArr = Immutable.List(['5', null, '6', '7']);
+        const newArr1 = Immutable.List(['8', '9', '10', '11']);
+        
+        // Merge lists and resolve conflicts according to item value
+        const arrMerge = oldArr.mergeWith((oldArr, newArr) => {
+            return (newArr === null) ? oldArr : newArr;
+        }, newArr);
+        document.getElementById('list').innerHTML = arrMerge;
+        console.log('arrMerge : ', arrMerge);
+
+        // Merge lists and resolve conflicts according to index
+        const arrMerge1 = oldArr.mergeWith((oldArr, newArr, index) => {
+            return (index % 2) ? newArr : oldArr;
+        },newArr1);
+        document.getElementById('list1').innerHTML = arrMerge1;
+        console.log('arrMerge1 : ', arrMerge1);
+    </script>
+</body>
+</html>

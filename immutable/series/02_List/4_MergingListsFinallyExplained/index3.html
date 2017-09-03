@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>mergeDeep()</h1>
+    
+    <div id="list"></div><p>=====</p>
+    <div id="list1"></div><p>=====</p>
+    <div id="list2"></div>
+    <script language="javascript">
+        const oldArr = Immutable.List(
+            [
+                ['Ho Chi Minh', ['Quan 1']],
+                ['Binh Dinh', ['Hoai Nhon']]
+            ]
+        );
+
+        const newArr = Immutable.List(
+            [
+                ['1'],
+                [
+                    ['2']
+                ]
+            ]
+        );
+        
+        // Merge two nested Lists together and let Immutable resolve conflicts
+        const arrMerge = oldArr.merge(newArr);
+        document.getElementById('list').innerHTML = arrMerge;
+        console.log('arrMerge : ', arrMerge);
+
+
+
+        const oldArr_1 = Immutable.fromJS(
+            [
+                ['Ho Chi Minh', ['Quan 1']],
+                ['Binh Dinh', ['Hoai Nhon']]
+            ]
+        );
+        const newArr_1 = Immutable.fromJS(
+            [
+                ['1'],
+                [
+                    ['2']
+                ]
+            ]
+        );
+        const newArr_2 = Immutable.fromJS(
+            [
+                ['1'],
+                [
+                    '2', 'Loki'
+                ]
+            ]
+        );
+        // To preserve the nesting of a List and target a specific level of nesting, you need to use mergeDeep:
+        const arrMerge1 = oldArr_1.mergeDeep(newArr_1);
+        document.getElementById('list1').innerHTML = arrMerge1;
+        console.log('arrMerge1 : ', arrMerge1);
+
+        // Merge two nested Lists together and resolve conflicts yourself
+        const arrMerge2 = oldArr_1.mergeDeepWith((prev, next, index) => {
+            return (next === 'Loki') ? prev : next;
+        }, newArr_2);
+        document.getElementById('list2').innerHTML = arrMerge2;
+        console.log('arrMerge2 : ', arrMerge2);
+    </script>
+</body>
+</html>
