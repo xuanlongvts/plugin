@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: All the Examples you’ll ever need to Get, Set and Delete data from Lists</h1>
+    
+    <div id="list"></div>
+    <div id="list1"></div>
+    <div id="list2"></div>
+    <script language="javascript">
+        const addArr = [
+            'Viet Nam', // index [0];
+            [
+                'Binh Dinh',  // index [1][0];
+                [
+                    'Hoai Nhon', // index [1][1][0];
+                    [
+                        'Tam Quan Nam' // index [1][1][1][0];
+                    ]
+                ]
+            ]
+        ];
+        const addArrList = Immutable.fromJS(addArr);
+
+        const addArrListUpdate = addArrList.setIn([1,1,1,0], '<strong>Thu Do Tam Quan Nam</strong>');
+        document.getElementById('list').innerHTML = addArrListUpdate;
+        console.log('addArrList: ', addArrListUpdate);
+
+
+        // Add a new value to the end of a nested List with setIn()
+        const newListAddArr = addArrList.setIn(
+            [1,1,1,1], '<strong>Cuu Loi Dong</strong>'
+        );
+        document.getElementById('list1').innerHTML = newListAddArr;
+        console.log('newListAddArr: ', newListAddArr);
+        
+
+        // Replace the second-to-last value in a nested List with setIn()
+        const reaplaceListAddArr = newListAddArr.setIn(
+            [1,1,1,-2], '<strong>Thanh Pho Tam Quan Nam</strong>'
+        );
+                // What happens if an index doesn’t exist?
+                // const reaplaceListAddArr = newListAddArr.setIn(
+                //     [1,1,1,-5], '<strong>Thanh Pho Tam Quan Nam</strong>'
+                // );
+        document.getElementById('list2').innerHTML = reaplaceListAddArr;
+        console.log('reaplaceListAddArr: ', reaplaceListAddArr);
+    </script>
+</body>
+</html>

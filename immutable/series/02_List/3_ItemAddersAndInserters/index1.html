@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: All the Examples you’ll ever need to Get, Set and Delete data from Lists</h1>
+    
+    <div id="list"></div>
+    <div id="list1"></div>
+    <div id="list2"></div>
+    <div id="list3"></div>
+    <div id="list4"></div>
+    <script language="javascript">
+        const cityList = Immutable.List(['Ha Noi', 'Ho Chi Minh']);
+        const newCityList = cityList.insert(
+            0, '<strong>Quy Nhon</strong>'
+        );
+
+        document.getElementById('list').innerHTML = newCityList;
+        console.log('newCityList: ', newCityList);
+
+        // Add an item to the front of a List with unshift()
+        const newCityList_1 = cityList.unshift(
+            '<strong>Vũng Tàu</strong>'
+        );
+        document.getElementById('list1').innerHTML = newCityList_1;
+        console.log('newCityList_1: ', newCityList_1);
+
+        // Insert an item within a List with insert()
+        const newCityList_2 = cityList.insert(
+            1, '<strong>Nha Trang</strong>'
+        );
+        document.getElementById('list2').innerHTML = newCityList_2;
+        console.log('newCityList_1: ', newCityList_2);
+
+        // Append an item to the end of a List with insert()
+        const newCityList_3 = cityList.insert(
+            cityList.size, '<strong>Da Nang</strong>'
+        );
+        document.getElementById('list3').innerHTML = newCityList_3;
+        console.log('newCityList_3: ', newCityList_3);
+
+        // Append an item to the end of a List with push()
+        const newCityList_4 = cityList.push(
+            '<strong>Phan Thiet</strong>'
+        );
+        document.getElementById('list4').innerHTML = newCityList_4;
+        console.log('newCityList_4: ', newCityList_4);
+    </script>
+</body>
+</html>

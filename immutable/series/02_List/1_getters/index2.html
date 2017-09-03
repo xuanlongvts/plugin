@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Get a value from a deeply nested List with getIn()</h1>
+    
+    <div id="list"></div>
+    <div id="list1"></div>
+    <script language="javascript">
+        // Get a value from a deeply nested List
+        const addArr = 
+        [
+            'Viet Nam', // index [0]
+            [
+                'Binh Dinh', // index [1][0]
+                [
+                    'Hoai Nhon', // index [1][1][0]
+                    [
+                        'Tam Quan Nam'
+                    ] // index [1][1][1][0]
+                ]
+            ]
+        ];
+
+        const cityList = Immutable.fromJS(addArr);
+        
+        // get Tam Quan Nam cityList.getIn([1,1,1,0]);
+        document.getElementById('list').innerHTML = cityList.getIn([1,1,1,0]);
+        console.log('cityList: ', cityList.getIn([1,1,1,0]));
+    </script>
+</body>
+</html>

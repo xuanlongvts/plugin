@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: All the Examples you’ll ever need to Get, Set and Delete data from Lists</h1>
+    
+    <div id="origin"></div>
+    <div id="list"></div>
+    <div id="list1"></div>
+    <script language="javascript">
+        const cityList = Immutable.List(['Ha Noi', 'Ho Chi Minh', 'Da Nang', 'Quy Nhon']);
+
+        document.getElementById('origin').innerHTML = cityList;
+        console.log('origin: ', cityList);
+
+
+        const newCityList = cityList.set(
+            0, '<b>Thu Do Viet Nam la Ha Noi</b>'
+        );
+        document.getElementById('list').innerHTML = newCityList;
+        console.log('newCityList: ', newCityList);
+
+        const newCityList_1 = cityList.set(
+            -2, '<b>Da Nang la mot thanh pho cua Viet Nam</b>'
+        );
+        document.getElementById('list1').innerHTML = newCityList_1;
+        console.log('newCityList 1: ', newCityList_1);
+    </script>
+</body>
+</html>

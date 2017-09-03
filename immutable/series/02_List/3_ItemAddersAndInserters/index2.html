@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: All the Examples you’ll ever need to Get, Set and Delete data from Lists</h1>
+    <h2>Deleters</h2>
+
+    <div id="list"></div>
+    <div id="list1"></div>
+    <div id="list2"></div>
+    <div id="list3"></div>
+
+    <div id="list4"></div>
+    <div id="list5"></div>
+    <div id="list6"></div>
+    <div id="origin"></div>
+    <script language="javascript">
+        const cityList = Immutable.List(['Ha Noi', 'Ho Chi Minh', 'Da Nang', 'Quy Nhon']);
+        
+        // Delete an item from the front of a List with delete()
+        const newCityList_1 = cityList.delete(0);
+        document.getElementById('list').innerHTML = newCityList_1;
+        console.log('cityList: ', cityList.get(1));
+
+        // Delete an item within a List with delete()
+        const newCityList_2 = cityList.delete(1);
+        document.getElementById('list1').innerHTML = newCityList_2;
+        console.log('cityList 1: ', newCityList_2);
+
+        // Delete an item from the end of a List with delete()
+        const newCityList_3 = cityList.delete(cityList.size -1);
+        document.getElementById('list2').innerHTML = newCityList_3;
+        console.log('cityList 2: ', newCityList_3);
+
+        // Delete an item from the end of a List with pop()
+        const newCityList_4 = cityList.pop();
+        document.getElementById('list3').innerHTML = newCityList_4;
+        console.log('cityList 3: ', newCityList_4);
+
+        // Delete the second-to-last item of a List with delete()
+        const newCityList_5 = cityList.delete(-2);
+        document.getElementById('list4').innerHTML = newCityList_5;
+        console.log('cityList 4: ', newCityList_5);
+
+        // Delete all values from the List with clear
+        const newCityList_6 = cityList.clear();
+        document.getElementById('list5').innerHTML = newCityList_6;
+        console.log('cityList 5: ', newCityList_6);
+
+        // origin array
+        document.getElementById('origin').innerHTML = `<strong>origin</strong>: ${cityList}`;
+    </script>
+</body>
+</html>
