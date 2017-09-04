@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add new key/value pair to a Map with set()</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Delete a key from a Map</h1>
+
+    <div id="map"></div>
+    <script language="javascript">
+        const avengersMap = Immutable.Map({
+            ironMan: 'Tony Stark',
+            captainAmerica: 'Steve Rogers'
+        });
+
+        const deleteMap = avengersMap.delete('captainAmerica');
+        document.getElementById('map').innerHTML = deleteMap;
+        console.log('deleteMap: ', deleteMap);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add new key/value pair to a Map with set()</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Act on a single key/value in a Map</h1>
+
+    <div id="map"></div><br />
+    <div id="map1"></div>
+
+    <script language="javascript">
+        const avengersMap = Immutable.Map({
+            ironMan: 'Tony Stark',
+            captainAmerica: 'Steve Rogers',
+            blackWidow: 'Natasha Romanov'
+        });
+
+        const updateMap = avengersMap.update('ironMan', (ironManValue) => {
+            return ironManValue + ' is ironMan update'
+        });
+        document.getElementById('map').innerHTML = updateMap;
+        console.log('updateMap: ', updateMap);
+
+        // Act on a single key/value, and provide a default value if the key doesn’t exist
+        const updateMap1 = avengersMap.update('theHulk', 'Hulk default', (theHulkValue) => {
+            return theHulkValue + ' is Hulk default'
+        });
+        document.getElementById('map1').innerHTML = updateMap1;
+        console.log('updateMap1: ', updateMap1);
+    </script>
+</body>
+</html>

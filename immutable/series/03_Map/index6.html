@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Every way to create an Immutable Map</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Create a new Map from…</h1>
+    <h4>…a JavaScript iterator</h4>
+
+    <div id="map"></div>
+    <script language="javascript">
+        var arr = [
+            'ironMan', 'captainAmerica'
+        ];
+
+        const map = Immutable.Map(
+            arr.map((item, index) => (
+                ['heroName' + index, item]
+            ))
+        );
+
+        document.getElementById('map').innerHTML = map;
+        console.log('map: ', map);
+    </script>
+</body>
+</html>

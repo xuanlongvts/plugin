@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Get, Set, Update and Delete Data from Maps</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: Get, Set, Update and Delete Data from Maps</h1>
+    <h4>Determine if a key exists in a deeply nested Map with hasIn()</h4>
+
+    <div id="map"></div>
+    <script language="javascript">
+        const avengersMap = Immutable.fromJS({
+            hero1: {
+                ironMan: {
+                    heroName: 'Iron Man'
+                }
+            }
+        });
+
+        const getMapFirst = avengersMap.hasIn(['hero1', 'ironMan', 'heroName']);
+        document.getElementById('map').innerHTML = getMapFirst;
+        console.log('getMapFirst: ', getMapFirst);
+    </script>
+</body>
+</html>

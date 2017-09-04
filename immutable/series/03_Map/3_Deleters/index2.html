@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add new key/value pair to a Map with set()</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Delete a key from a Deeply Nested Map</h1>
+
+    <div id="map"></div><br />
+    <div id="map1"></div>
+    <script language="javascript">
+        const avengersMap = Immutable.fromJS({
+            hero: {
+                ironMan: {
+                    realName: 'Tony Stark',
+                    partner: 'Pepper Potts'
+                }
+            }
+        });
+
+        const deleteMap = avengersMap.deleteIn(['hero', 'ironMan', 'partner']);
+        document.getElementById('map').innerHTML = deleteMap;
+        console.log('deleteMap: ', deleteMap);
+
+        // Delete all values from a Map with clear()
+        const emptyMap = avengersMap.clear();
+        document.getElementById('map1').innerHTML = emptyMap;
+        console.log('emptyMap: ', emptyMap);
+    </script>
+</body>
+</html>

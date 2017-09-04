@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Every way to create an Immutable Map</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Create a new Map from…</h1>
+    <h4>…a JavaScript Array</h4>
+
+    <div id="map"></div>
+    <script language="javascript">
+        const arr = [
+            ['name1', 'Ho Chi Minh'],
+            ['name2', 'Da Nang']
+        ];
+        const map = Immutable.Map(arr);
+
+        document.getElementById('map').innerHTML = map;
+        console.log('map: ', map);
+
+        // Important: Keep in mind that the key names must be unique. 
+        // Try changing 'heroName2' to 'heroName1' in the code above and see what happens. 
+        // This is because Immutable will overwrite what it sees as a duplicate key.
+    </script>
+</body>
+</html>

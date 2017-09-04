@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Every way to create an Immutable Map</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Create a new Map from…</h1>
+    <h4>…a deeply nested JavaScript Object or JSON-encoded data</h4>
+
+    <div id="map"></div>
+    <script language="javascript">
+        const avengers = {
+            hero1: {
+                ironMan: {
+                    realName: 'Tony Stark'
+                }
+            },
+            hero2: {
+                captainAmerica: {
+                    realName: 'Steve Rogers'
+                }
+            }
+        };
+        const map = Immutable.Map(Immutable.fromJS(avengers));
+        const ironMan = map.getIn(['hero1', 'ironMan']);
+
+        document.getElementById('map').innerHTML = ironMan;
+        console.log('ironMan: ', Immutable.Map.isMap(ironMan));
+
+        /*
+            Immutable’s Map does not work on deeply nested objects, as it’ll only do a shallow conversion (e.g. key in obj.key will be converted to a Map, 
+            but subkey in obj.key.subkey will be left unchanged – that is, if subkey is a JavaScript object, it will remain a JavaScript object, and not an Immutable Map).
+            
+            In order to create a new Map from a complex object or JSON-encoded data, therefore, you’ll need to use fromJS().
+        */
+    </script>
+</body>
+</html>

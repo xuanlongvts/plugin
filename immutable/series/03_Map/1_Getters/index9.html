@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Get, Set, Update and Delete Data from Maps</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: Get, Set, Update and Delete Data from Maps</h1>
+    <h4>Using the …spread operator</h4>
+
+    <div id="map"></div><br />
+    <div id="map1"></div><br />
+    <div id="map2"></div>
+    <script language="javascript">
+        const avengersMap = Immutable.Map({
+            hero1: 'Tony Stark',
+            captainAmerica: 'Steve Rogers',
+            blackWindow: 'Natasha Romanov'
+        });
+
+        const [...getMapKeys] = avengersMap.keys();
+        document.getElementById('map').innerHTML = getMapKeys;
+        console.log('getMapKeys: ', getMapKeys);
+
+        // Get all the values from a Map with values()
+        const [...arrValues] = avengersMap.values();
+        document.getElementById('map1').innerHTML = arrValues;
+        console.log('arrValues: ', arrValues);
+
+        // Get both keys and values from a Map with entries()
+        const [...keyValuesCollection] = avengersMap.entries();
+        document.getElementById('map2').innerHTML = keyValuesCollection;
+        console.log('keyValuesCollection: ', keyValuesCollection);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add new key/value pair to a Map with set()</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Map.merge()</h1>
+
+    <div id="map"></div><br />
+    <div id="map1"></div>
+    <script language="javascript">
+        const avengers = Immutable.Map({
+            ironMan: 'Tony Stark',
+            captainAmerica: 'Steve Rogers'
+        });
+
+        const avengers1 = Immutable.Map({
+            blackWidow: 'Natasha Romanova',
+            theHulk: 'Bruce Banner'
+        });
+
+        const mergeMap = avengers.merge(avengers1);
+        document.getElementById('map').innerHTML = mergeMap;
+        console.log('mergeMap: ', mergeMap);
+    </script>
+</body>
+</html>

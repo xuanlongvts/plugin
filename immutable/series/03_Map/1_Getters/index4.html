@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Get, Set, Update and Delete Data from Maps</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: Get, Set, Update and Delete Data from Maps</h1>
+    <h4>Get the value of the first key in a Map</h4>
+
+    <div id="map"></div>
+    <div id="map1"></div>
+    <script language="javascript">
+        const avengersMap = Immutable.fromJS({
+            hero1: 'Tony Stark',
+            captainAmerica: 'Steve Rogers',
+            blackWindow: 'Natasha Romanov'
+        });
+
+        const getMapFirst = avengersMap.first();
+        const getMapLast = avengersMap.last();
+        document.getElementById('map').innerHTML = getMapFirst;
+        console.log('getMapFirst: ', getMapFirst);
+
+        document.getElementById('map1').innerHTML = getMapLast;
+        console.log('getMapLast: ', getMapLast);
+    </script>
+</body>
+</html>

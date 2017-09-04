@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Immutable.js: Get, Set, Update and Delete Data from Maps</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Immutable.js: Get, Set, Update and Delete Data from Maps</h1>
+    <h4>Get a default value from a Map if the key is not found</h4>
+
+    <div id="map"></div>
+    <script language="javascript">
+        const avengersMap = Immutable.Map({
+            ironMan: 'Tony Stark',
+            captainAmerica: 'Steve Rogers'
+        });
+
+        const getMap = avengersMap.get('blackWidow', 'Missing Avenger');
+        document.getElementById('map').innerHTML = getMap;
+        console.log('getMap: ', getMap);
+    </script>
+</body>
+</html>
