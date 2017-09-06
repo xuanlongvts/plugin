@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add new key/value pair to a Map with set()</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Map.mergeIn()</h1>
+
+    <div id="map"></div><br />
+    <div id="map1"></div>
+    <script language="javascript">
+        const obj = Immutable.fromJS({
+            heroes: {
+                ironMan: {
+                    name: 'Tony Stark'
+                },
+                captainAmerica: {
+                    name: 'Steve Rogers'
+                }
+            }
+        });
+  
+        const obj1 = Immutable.fromJS({
+            partner: {
+                realName: 'Pepper Potts',
+                heroName: 'hera'
+            }
+        });
+
+        const mergeMap = obj.mergeIn(['heros', 'ironMan'], obj1);
+        document.getElementById('map').innerHTML = mergeMap;
+        console.log('mergeMap: ', mergeMap);
+    </script>
+</body>
+</html>
