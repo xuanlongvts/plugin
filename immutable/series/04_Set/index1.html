@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Creating Sets</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const set = Immutable.Set(); // su dung khi du lieu khong lap lai
+        const setOf = Immutable.Set.of(); // su dung khi du lieu lap lai
+
+        document.getElementById('set').innerHTML = set;
+        document.getElementById('set1').innerHTML = set1;
+        console.log(set);
+        console.log(setOf);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>…a JavaScript iterator</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const avengersArray = ['ironMan' , 'captainAmerica'];
+
+        const set = Immutable.Set(avengersArray.map((item, index) => (
+            ['heroName: ' + index, item]
+        )))
+
+        document.getElementById('set').innerHTML = set;
+        console.log(set);
+    </script>
+</body>
+</html>
