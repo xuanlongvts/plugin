@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>subtract</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const avengersSet = Immutable.Set(['ironMan', 'captainAmerica', 'blackWidow']);
+        const sub1 = avengersSet.subtract(['blackWidow']);
+        const sub2 = avengersSet.subtract(['blackWidow', 'captainAmerica']);
+        console.log('avengersSet: ', avengersSet);
+        console.log('sub1: ', sub1);
+        console.log('sub2: ', sub2);
+    </script>
+</body>
+</html>

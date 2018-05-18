@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Comparse normal js</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const obj1 = {key: 'value'};
+        const obj2 = {key: 'value'};
+        console.log(obj1 == obj2);
+
+        const avengersSet = Immutable.Set([{ blackWidow: 'Natasha Romanov' }, { captainAmerica: 'Steve Rogers' }]);
+        avengersSet.subtract([{ blackWidow: 'Natasha Romanov' }]);
+        document.getElementById('set').innerHTML = avengersSet;
+        
+        console.log('avengersSet: ', avengersSet);
+    </script>
+</body>
+</html>

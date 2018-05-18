@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>immutable compare object</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const obj1 = Immutable.Map({key: 'value'});
+        const obj2 = Immutable.Map({key: 'value'});
+        const compare = Immutable.is(obj1, obj2);
+        console.log('compare: ', compare);
+    </script>
+</body>
+</html>

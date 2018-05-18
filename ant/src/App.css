@@ -12,6 +12,14 @@
   transform: translateX(0);
 }
 
+.ant-table-tbody > tr > td{
+  padding: 0;
+}
+
+.ant-table-tbody > tr > td div{
+  padding: 16px 8px;
+}
+
 .components-table-demo-nested .ant-table-expanded-row > td:last-child {
 padding: 0 48px 0 8px;
 }
@@ -38,4 +46,39 @@ background: none;
 
 .components-table-demo-nested .table-operation a:not(:last-child) {
 margin-right: 24px;
+}
+
+.error0 .content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.error0:hover{
+  cursor: pointer;
+}
+
+@keyframes fadeAnimation {
+  0%   { opacity: .5; }
+  50%  { opacity: .1; }
+  100% { opacity: .5; }
+}
+
+.error0 .content .bg{
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #ff0000;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  opacity: .2;
+  animation: fadeAnimation 2s infinite;
+}
+
+.error0 .content .txt{
+  position: relative;
+  z-index: 2;
+  color: #fff;
 }

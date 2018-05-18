@@ -4,8 +4,6 @@ import "antd/dist/antd.css";
 import "./App.css";
 import { Table, Icon, Switch, Radio, Form } from 'antd';
 import $ from 'jquery';
-const FormItem = Form.Item;
-
 
 class App1 extends Component {
     constructor(props) {
