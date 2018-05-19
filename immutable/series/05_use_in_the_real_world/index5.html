@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Remove duplicates from an Immutable List()</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const fixedAvengers = Immutable.fromJS([{
+            id: 1,
+            heroName: 'captainAmerica',
+            realName: 'Steve Rogers'
+        }, {
+            id: 2,
+            heroName: 'blackWidow',
+            realName: 'Natasha Romanov'
+        }, {
+            id: 2,
+            heroName: 'blackWidow',
+            realName: 'Natasha Romanov'
+        }, {
+            id: 3,
+            heroName: 'theHulk',
+            realName: 'Bruce Banner'
+        }]);
+        const removeList = fixedAvengers.toSet().toList();
+        console.log('removeList: ', removeList);
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>union</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const avengersCast = Immutable.Set(['ironMan', 'captainAmerica', 'blackWidow']);
+        const civilWarCast = Immutable.Set(['ironMan', 'antMan', 'spiderMan']);
+        const union1 = avengersCast.union(civilWarCast);
+        const union2 = avengersCast.union(['ironMan', 'antMan', 'spiderMan']);
+        console.log('union1: ', union1);
+        console.log('union2: ', union2);
+    </script>
+</body>
+</html>

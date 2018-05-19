@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Intersect …two Sets of Maps</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        // First, use fromJS() to create a List of Maps
+        const avengersCast = Immutable.fromJS([{
+                blackWidow: 'Natasha Romanov'
+            }, {
+                ironMan: 'Tony Stark'
+            }, {
+                captainAmerica: 'Steve Rogers'
+            }, {
+                theHulk: 'Bruce Banner'
+        }]);
+        const civilWarCast = Immutable.fromJS([{
+                blackWidow: 'Natasha Romanov'
+            }, {
+                ironMan: 'Tony Stark'
+            }, {
+                captainAmerica: 'Steve Rogers'
+            }, {
+                antMan: 'Scott Lang'
+            }, {
+                spiderMan: 'Peter Parker'
+        }]);
+        const avengersSet = Immutable.Set(avengersCast);
+        const civilWarSet = Immutable.Set(civilWarCast);
+        const intersect = avengersSet.intersect(civilWarSet);
+        console.log('intersect: ', intersect);
+    </script>
+</body>
+</html>
+

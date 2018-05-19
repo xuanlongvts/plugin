@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Set multiple values in a Map in one go</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const avengers = Immutable.fromJS({
+            heroes: {
+                0: {
+                    heroName: 'ironMan',
+                    realName: 'Tony Stark'
+                },
+                1:  {
+                    heroName: 'captainAmerica',
+                    realName: 'Unknown'
+                }
+            },
+            isAssembled: false
+        });
+        const newData = { realName: 'Steve Rogers' };
+        const updatedAvengers = avengers.mergeDeepIn([], {
+            heroes: {
+                1: newData
+            },
+            isAssembled: true
+        });
+        console.log('updatedAvengers: ', updatedAvengers);
+    </script>
+</body>
+</html>

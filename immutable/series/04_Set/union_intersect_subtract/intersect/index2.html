@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Introduce immutable</title>
+    <script language="javascript" src="../../../lib/immutable.min.js"></script>
+</head>
+<body>
+    <h1>Intersect two Sets of objects</h1>
+    <div id="set"></div><br />
+    <div id="set1"></div>
+    
+    <script language="javascript">
+        const ironCapArray = ['ironMan', 'captainAmerica'];
+        const blackHulkArray = ['blackWidow', 'theHulk'];
+        const spiderAntArray = ['spiderMan', 'antMan'];
+
+        const avengersCast = Immutable.Set([ironCapArray, blackHulkArray]);
+        const civilWarCast = Immutable.Set([ironCapArray, spiderAntArray]);
+        const intersect = avengersCast.intersect(civilWarCast);
+        console.log('intersect: ', intersect);
+    </script>
+</body>
+</html>
