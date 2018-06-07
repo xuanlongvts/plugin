@@ -12,6 +12,9 @@ const SelectedPostsList = ({listSelected}) => (
                 </li>
             ))
         }
+        {
+            listSelected && console.log('listSelected: ', listSelected)
+        }
     </ul>
 );
 
