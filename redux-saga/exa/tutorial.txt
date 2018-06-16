@@ -1,0 +1,8 @@
+Fork:   thực hiện một hoạt động non-blocking trên function được truyền cho nó.
+Take:   tạm dừng cho đến khi nhận được action
+Race:   chạy nhiều effect đồng thời, sau đó hủy tất cả nếu một trong số đó kết thúc.
+Call:   gọi function. Nếu nó return về một promise, tạm dừng saga cho đến khi promise được giải quyết.
+Put:    dispatch một action.
+Select: chạy một selector function để lấy data từ state.
+takeLatest:     có nghĩa là nếu chúng ta thực hiện một loạt các actions, nó sẽ chỉ thực thi và trả lại kết quả của của actions cuối cùng.
+takeEvery:      thực thi và trả lại kết quả của mọi actions được gọi.
